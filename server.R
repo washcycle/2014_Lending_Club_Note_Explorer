@@ -18,4 +18,8 @@ shinyServer(function(input, output, session) {
             }
             plot0
     })
+    
+    output$var_table <- renderUI({
+        inclRmd("vartable.Rmd")
+    })
 })

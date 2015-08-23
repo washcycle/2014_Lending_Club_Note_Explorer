@@ -1,0 +1,12 @@
+| Variable | Definition |
+| -------- | ---------- |
+| loan_amnt | loan amount in dollars |
+| int_rate | interest rate on loan |
+| installment | monthly payment amount in dollars |
+| annual_inc | anual income in dollars |
+| dti | Debt-to-income ratio |
+| fico_range_low | fico score low |
+| fico_range_high | ficoe score high |
+| revol_bal | revolving credit balance in dollars |
+| revol_util | revolving credit utilization ratio |
+| total_acc | total credit accounts |

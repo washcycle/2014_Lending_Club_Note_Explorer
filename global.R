@@ -28,4 +28,13 @@ notes_charged_full_paid <- notes %>%
 
 selectableData <- names(notes_charged_full_paid)[sapply(notes_charged_full_paid, class) == "numeric"]
 
-
+# Helper function for rendering Rmd to html
+# Source: https://github.com/vnijs/shiny-site/blob/master/global.R
+inclRmd <- function(path, r_env = parent.frame()) {
+    paste(readLines(path, warn = FALSE), collapse = '\n') %>%
+        knitr::knit2html(text = ., fragment.only = TRUE, envir = r_env,  options = "",
+                         stylesheet = "") %>%
+        gsub("&lt;!--/html_preserve--&gt;","",.) %>%  ## knitr adds this
+        gsub("&lt;!--html_preserve--&gt;","",.) %>%   ## knitr adds this
+        HTML
+}
