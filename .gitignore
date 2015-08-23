@@ -1,0 +1,5 @@
+# source data
+.Rproj.user
+rsconnect
+.Rhistory
+*.csv
