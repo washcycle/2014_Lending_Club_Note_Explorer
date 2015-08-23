@@ -13,7 +13,8 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
@@ -46,12 +47,19 @@
     <h2>Lending Club Note Explorer</h2>
   </hgroup>
   <article data-timings="">
-    <p>The application is hosted on <a href="https://washcycle.shinyapps.io/2014_lending_club_note_explorer">shinyapps.io</a>, click the link to open the applicaiton. A note is simply a loan issued by lending club. Lending club is a peer-to-peer lender, notes can be funded by individuals or instituions.</p>
+    <p>The application is hosted on <a href="https://washcycle.shinyapps.io/2014_lending_club_note_explorer">shinyapps.io</a>, click the link to open the applicaiton. A note is a loan. Lending club is a peer-to-peer personnel loan lender, notes can be funded by individuals and/or instituions.</p>
 
-<h3>The goal.</h3>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<ol>
-<li>Explorer the data set to determine variables that migth help in investing in loans.</li>
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Goal</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Explorer the data set to determine variables that help making investing decisions.</li>
 <li>Calculate distributions for different note loan issuing variables.</li>
 <li>For each variable into charged-off(defaulted) and fully paid notes.</li>
 </ol>
@@ -62,10 +70,84 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>List of all the currently availbe variables that will work with the data explorer.</p>
+
+<table><thead>
+<tr>
+<th>Variable</th>
+<th>Definition</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>loan_amnt</td>
+<td>loan amount in dollars</td>
+</tr>
+<tr>
+<td>int_rate</td>
+<td>interest rate on loan</td>
+</tr>
+<tr>
+<td>installment</td>
+<td>monthly payment amount in dollars</td>
+</tr>
+<tr>
+<td>annual_inc</td>
+<td>anual income in dollars</td>
+</tr>
+<tr>
+<td>dti</td>
+<td>Debt-to-income ratio</td>
+</tr>
+<tr>
+<td>fico_range_low</td>
+<td>fico score low</td>
+</tr>
+<tr>
+<td>fico_range_high</td>
+<td>ficoe score high</td>
+</tr>
+<tr>
+<td>revol_bal</td>
+<td>revolving credit balance in dollars</td>
+</tr>
+<tr>
+<td>revol_util</td>
+<td>revolving credit utilization ratio</td>
+</tr>
+<tr>
+<td>total_acc</td>
+<td>total credit accounts</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How to Use Results</h2>
   </hgroup>
   <article data-timings="">
     
+<div style='float:left;width:48%;' class='centered'>
+  <p>Looking at the distribution for a variable to get an idea of at what value a fully paid note is likley to happen vs a charged-off note.</p>
+
+<p>A high desntiy of fully paid vs charged-off notes would signifiy a variable that might be worth investigating further. </p>
+
+<p>Example: The figure on the right shows the debt-to-income(dti) ratio for a borrower. The fully paid notes are shifted to the left with respect to the charged off notes. This means that lower dti increases the likely hood that a note will be fully paid.</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+</div>
+<div>
+  
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -82,8 +164,20 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='The Goal'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Variables'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How to Use Results'>
+         4
       </a>
     </li>
   </ul>
@@ -95,7 +189,15 @@
   <![endif]-->
 </body>
   <!-- Load Javascripts for Widgets -->
-  
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
   <!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
